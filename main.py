@@ -25,6 +25,7 @@ def index():
 
     # Pass the DataFrame data to the HTML template
     return render_template('index.html', data=df_dict, myid=myid)
+    
 
 
 if __name__ == '__main__':

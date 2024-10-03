@@ -8,9 +8,7 @@
 <body>
     <h3>CMCHIS</h3>
     <h4>CANCELLATION REQUESTED  BY THE HOSPITAL </h4>
-    <form method="POST">
-       
-       
+               
         <label>DATE WHEN CANCELLATION REQUIRED </label>
         <input type="date" name="dname"> 
         <P>REFERRAL ID: {{ data['RefNo'] }}</P>
@@ -33,8 +31,8 @@
         <br> <br> <br> 
         <P align="right">(SIGNATURE OF TREATING DOCTOR WITH DATE)</P>
         <hr>
-        
-        <input type="submit" value="Submit">
+    <form action = "/" method="POST">
+        <input type="submit" value="Cancel Form">
     </form>
 </body>
 </html>
