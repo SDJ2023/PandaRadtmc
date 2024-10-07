@@ -6,14 +6,12 @@
     <title>Pandas to Form</title>
 </head>
 <body>
-    <h3>CMCHIS</h3>
-    <h4>CANCELLATION REQUESTED  BY THE HOSPITAL </h4>
+    
+    <center><h4><U>CANCELLATION REQUESTED  BY THE HOSPITAL</U></h4></center>
                
-        <label>DATE WHEN CANCELLATION REQUIRED </label>
-        <input type="date" name="dname"> 
-        <P>REFERRAL ID: {{ data['RefNo'] }}</P>
-        <P>NAME OF THE PATIENT: {{ data['PatientName'] }} </P>
-        <P>Age / Sex :{{ data['PatientAge'] }} / {{ data['Gender'] }}</P>
+        <p>DATE WHEN CANCELLATION REQUIRED: </p>
+        <P>REFERRAL ID: {{ data['RefNo'] }} &nbsp; &nbsp; &nbsp; &nbsp; TPAZONE: {{ data['PayerZone'] }}</P>
+        <P>NAME OF THE PATIENT: {{ data['PatientName'] }} &nbsp; &nbsp; &nbsp; &nbsp; Age / Sex :{{ data['PatientAge'] }} / {{ data['Gender'] }}</P>
         <p>HOSPITAL NAME:THANJAVUR MEDICAL COLLEGE AND HOSPITAL (GOVERNMENT)</p>
         <p>HOSPITAL DISTRICT:THANJAVUR</p>
         <P>DIAGNOSIS: {{ data['ProvisionalDiagnosis'] }}</P>
@@ -21,18 +19,14 @@
         <P> TREATING / SURGERY DONE BY:{{ data['TREATDOCTOR'] }} </P>
         <P> CANCELLATION DONE BY: {{ data['TREATDOCTOR'] }} </P>
         <P> DOCTOR APPROVED BY: {{ data['TREATDOCTOR'] }} </P>
-        <P>Reason for Cancellation (Kindly fill the appropriate column completely) </P>
-        <P>UNFIT FOR SURGERY WITH REASONS / DETAILS : NIL</P>
-        <P>SURGERY POSTPONED WITH REASONS / DETAILS : NIL</P>
-        <P>OTHER  WITH REASONS / DETAILS : PATIENT DID NOT COME / PATIENT NOT WILLING</P>
+        <P>REASON FOR CANCELLATION (KINDLY FILL THE APPROPRIATE COLUM COMPLETELY) </P>
+        <P>> UNFIT FOR SURGERY WITH REASONS / DETAILS : NIL</P>
+        <P>> SURGERY POSTPONED WITH REASONS / DETAILS : NIL</P>
+        <P>> OTHER  WITH REASONS / DETAILS : PATIENT DID NOT COME / PATIENT NOT WILLING</P>
         <br> <br> <br>
                 <P>{{ data['PatientName'] }}</P>
                 <P>(SIGNATURE OF PATIENT) / SIGNATURE OF ATTENDER  </P>
         <br> <br> <br> 
         <P align="right">(SIGNATURE OF TREATING DOCTOR WITH DATE)</P>
-        <hr>
-    <form action = "/" method="POST">
-        <input type="submit" value="Cancel Form">
-    </form>
-</body>
+        </body>
 </html>

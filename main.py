@@ -15,7 +15,6 @@ def cancel():
 def index():
     # Create a simple Pandas DataFrame
     myid = request.form['rrid']
-    print(myid)
     data = pd.read_csv("./static/MG.csv")
     df = pd.DataFrame(data)
     df = df[df['RefNo'] == myid].iloc[0]
@@ -25,7 +24,6 @@ def index():
 
     # Pass the DataFrame data to the HTML template
     return render_template('index.html', data=df_dict, myid=myid)
-    
 
 
 if __name__ == '__main__':
