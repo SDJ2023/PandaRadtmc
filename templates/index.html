@@ -7,11 +7,15 @@
 </head>
 <body>
     
-    <center><h4><U>CANCELLATION REQUESTED  BY THE HOSPITAL</U></h4></center>
-               
+    <center>
+        <p><U>CMCHIS</U></p>
+        <U>CANCELLATION REQUESTED  BY THE HOSPITAL</U>
+    </center>
+             
         <p>DATE WHEN CANCELLATION REQUIRED: </p>
-        <P>REFERRAL ID: {{ data['RefNo'] }} &nbsp; &nbsp; &nbsp; &nbsp; TPAZONE: {{ data['PayerZone'] }}</P>
-        <P>NAME OF THE PATIENT: {{ data['PatientName'] }} &nbsp; &nbsp; &nbsp; &nbsp; Age / Sex :{{ data['PatientAge'] }} / {{ data['Gender'] }}</P>
+    <br>
+    <P>REFERRAL ID: {{ data['RefNo'] }} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; TPAZONE: {{ data['PayerZone'] }}</P>
+        <P>NAME OF THE PATIENT: {{ data['PatientName'] }} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Age / Sex :{{ data['PatientAge'] }} / {{ data['Gender'] }}</P>
         <p>HOSPITAL NAME:THANJAVUR MEDICAL COLLEGE AND HOSPITAL (GOVERNMENT)</p>
         <p>HOSPITAL DISTRICT:THANJAVUR</p>
         <P>DIAGNOSIS: {{ data['ProvisionalDiagnosis'] }}</P>
@@ -19,10 +23,11 @@
         <P> TREATING / SURGERY DONE BY:{{ data['TREATDOCTOR'] }} </P>
         <P> CANCELLATION DONE BY: {{ data['TREATDOCTOR'] }} </P>
         <P> DOCTOR APPROVED BY: {{ data['TREATDOCTOR'] }} </P>
-        <P>REASON FOR CANCELLATION (KINDLY FILL THE APPROPRIATE COLUM COMPLETELY) </P>
-        <P>> UNFIT FOR SURGERY WITH REASONS / DETAILS : NIL</P>
-        <P>> SURGERY POSTPONED WITH REASONS / DETAILS : NIL</P>
-        <P>> OTHER  WITH REASONS / DETAILS : PATIENT DID NOT COME / PATIENT NOT WILLING</P>
+        <P>Reason for Cancellation (Kindly fill the appropriate column completely)</P>
+        <P>UNFIT FOR SURGERY WITH REASONS / DETAILS : NIL</P>
+        <P>SURGERY POSTPONED WITH REASONS / DETAILS : NIL</P>
+    <br>
+        <P>OTHER  WITH REASONS / DETAILS : PATIENT DID NOT COME / PATIENT NOT WILLING</P>
         <br> <br> <br>
                 <P>{{ data['PatientName'] }}</P>
                 <P>(SIGNATURE OF PATIENT) / SIGNATURE OF ATTENDER  </P>
