@@ -4,9 +4,10 @@
     </head>
     <body>
        <h1>Welcome to Performance Data Page</h1>
+        <div class="container-fluid">
         <form action ="/perform" method="POST">
-            Date <input type="date">
-            Location <select name="locat" id="loc">
+           <div>Date <input type="date" class="form-control" name="date" required"> </div> 
+           <div>Location <select class="form-select" name="locat" id="loc">
               <option value="Main DR">Main DR</option>
               <option value="TAEI DR">TAEI DR</option>
               <option value="OP DR">OP DR</option>
@@ -14,11 +15,27 @@
                <option value="BED Xray">BED Xray</option>
                 <option value="Barium">Barium</option>
                 <option value="IVP">IVP</option>
-          <div> MainDR_OP <input type="number"> </div>  
-            MainDR_IP_NonMLC <input type="number">
-                
             </select>
+               </div> 
+            <div>
+            OP <input type="number" class ="form-control"> 
+            IP_NonMLC <input type="number" class ="form-control">
+            MLC <input type="number" class ="form-control">
+            Total <input type="number"  class ="form-control">
+            </div>
+            <div>
+            Exp_OP <input type="number" class ="form-control"> 
+            Exp_IP_NonMLC <input type="number" class ="form-control">
+            Exp_MLC <input type="number" class ="form-control">
+            Exp_Total <input type="number" class ="form-control">
+            </div>
+
             
+    
+            <div>
+            <input type="submit" class="primary" value="Submit">
+            </div>
         </form>
+            </div>
     </body>
 </html>
