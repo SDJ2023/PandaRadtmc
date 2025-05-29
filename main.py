@@ -4,7 +4,7 @@ import pandas as pd
 app = Flask(__name__)
 
 global myid
-
+inventory = []
 
 @app.route('/', methods=['GET', 'POST'])
 def cancel():
