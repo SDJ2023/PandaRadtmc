@@ -6,9 +6,15 @@ app = Flask(__name__)
 global myid
 inventory = []
 
+
 @app.route('/', methods=['GET', 'POST'])
 def cancel():
     return render_template('Cancel.html')
+
+
+@app.route('/base', methods=['GET', 'POST'])
+def base():
+    return render_template('base.html')
 
 
 @app.route('/index', methods=['GET', 'POST'])

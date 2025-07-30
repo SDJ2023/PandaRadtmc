@@ -1,13 +1,14 @@
-<html>
-    <head>
-        <title>Cancellation Form</title>
-    </head>
-    <body>
-        <form name="cform" method="POST" action="{{url_for('index')}}">
+{% extends "base.html" %}
+    {% block head %}
+    <h1>Cancellation Form</h1>
+    {% endblock %}
+    {% block body %}
+<div class="container">
+             <form name="cform" method="POST" action="{{url_for('index')}}">
             REFFERAL ID: <Input type="text" name="rrid"/>
             CANCELLATION DATE:<input type="date" name="cd" />
             <input type="submit" value="Generate Cancel form" name="cbutton"/>
           </form>
+</div>
 
-    </body>
-</html>
+{% endblock %}
