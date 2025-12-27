@@ -1,7 +1,7 @@
-from flask import Flask, render_template, request, redirect, url_for
-import pandas as pd
 import os
-import datetime as dt
+
+import pandas as pd
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 UPLOAD_FOLDER = 'uploads'  # Directory to save uploaded files
@@ -24,16 +24,24 @@ def base():
 @app.route('/index', methods=['GET', 'POST'])
 def index():
     # Create a simple Pandas DataFrame
-    myid = request.form['rrid']
-    data = pd.read_csv("./static/MG.csv")
-    df = pd.DataFrame(data)
-    df = df[df['RefNo'] == myid].iloc[0]
-    #df = df.loc[df['RefNo']] == myid
-    # Convert DataFrame to a dictionary to pass to the template
-    df_dict = df.to_dict()
+    try:
+        myid = request.form.get('rrid')
+        if not myid:
+            return 'Reference ID (rrid) is required'
+        data = pd.read_csv("./static/MG.csv")
+        df = pd.DataFrame(data)
+        filtered = df[df['RefNo'] == myid]
+        if filtered.empty:
+            return f'No record found for RefNo: {myid}'
+        df = filtered.iloc[0]
+        #df = df.loc[df['RefNo']] == myid
+        # Convert DataFrame to a dictionary to pass to the template
+        df_dict = df.to_dict()
 
-    # Pass the DataFrame data to the HTML template
-    return render_template('index.html', data=df_dict, myid=myid)
+        # Pass the DataFrame data to the HTML template
+        return render_template('index.html', data=df_dict, myid=myid)
+    except Exception as e:
+        return f'Error: {str(e)}'
 
 
 @app.route('/process', methods=['GET', 'POST'])
@@ -44,7 +52,7 @@ def process():
         file = request.files['file']
         if file.filename == '':
             return 'No selected file'
-        if file:
+        if file and file.filename:
             filepath = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
             file.save(filepath)
 
@@ -104,7 +112,7 @@ def process():
                 filtered_df = df.loc[
                     (df['DRAFT_CREATION_TIME_Preauth'] >= start_date)
                     & (df['DRAFT_CREATION_TIME_Preauth'] <= end_date)]
-                filtered_df.sort_values(by='DRAFT_CREATION_TIME_Preauth',
+                filtered_df = filtered_df.sort_values(by='DRAFT_CREATION_TIME_Preauth',
                                         ascending=False)
                 filtered_df.to_excel(
                     os.path.join(app.config['UPLOAD_FOLDER'],
