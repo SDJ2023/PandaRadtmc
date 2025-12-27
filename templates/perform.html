@@ -1,41 +1,35 @@
-<html>
-    <head>
-        <title>Performance Data</title>
-    </head>
-    <body>
-       <h1>Welcome to Performance Data Page</h1>
+{% extends "base.html" %}
+{% block head %}  Performance {% endblock %}
+    {% block content %}
+        <hr>Welcome to Perfrrmance Data Page
         <div class="container-fluid">
         <form action ="/perform" method="POST">
-           <div>Date <input type="date" class="form-control" name="date" required"> </div> 
-           <div>Location <select class="form-select" name="locat" id="loc">
-              <option value="Main DR">Main DR</option>
-              <option value="TAEI DR">TAEI DR</option>
-              <option value="OP DR">OP DR</option>
-              <option value="PMSSY DR">PMSSY DR</option>
-               <option value="BED Xray">BED Xray</option>
-                <option value="Barium">Barium</option>
-                <option value="IVP">IVP</option>
-            </select>
-               </div> 
-            <div>
-            OP <input type="number" class ="form-control"> 
-            IP_NonMLC <input type="number" class ="form-control">
-            MLC <input type="number" class ="form-control">
-            Total <input type="number"  class ="form-control">
+            <div class ="container d-flex flex-row bg-dart">
+            <div class="card" style="width: 22rem;">
+              <div class="card-body">
+                <h5 class="card-title">Main DR</h5>
+                <div>Date <input type="date" class="form-control" name="date" required"> </div> 
+                <div>
+                     <div> OP <input type="number" class ="form-control"> </div>
+                     <div> IP_NonMLC <input type="number" class ="form-control"></div>
+                    <div>MLC <input type="number" class ="form-control"></div>
+                    <div>Total <input type="number"  class ="form-control"></div>
+                      </div>
+                      <div>
+                          <div>Exp_OP <input type="number" class ="form-control"> </div>
+                          <div>Exp_IP_NonMLC <input type="number" class ="form-control"> </div>
+                          <div>Exp_MLC <input type="number" class ="form-control"> </div>
+                          <div>Exp_Total <input type="number" class ="form-control"> </div>
+                      </div>
+               </div>
             </div>
-            <div>
-            Exp_OP <input type="number" class ="form-control"> 
-            Exp_IP_NonMLC <input type="number" class ="form-control">
-            Exp_MLC <input type="number" class ="form-control">
-            Exp_Total <input type="number" class ="form-control">
             </div>
-
-            
-    
-            <div>
+            </div>
+        
+          <div>
             <input type="submit" class="primary" value="Submit">
             </div>
         </form>
             </div>
-    </body>
+{% endblock %}
 </html>
